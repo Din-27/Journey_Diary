@@ -15,7 +15,7 @@ exports.addJourney = async (req, res) =>{
                 }
             },
             attributes: {
-                exclude: ['createdAt', 'updatedAt']
+                exclude: ['updatedAt']
             }
         })
         

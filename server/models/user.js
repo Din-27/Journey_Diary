@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
           name: "idUser",
         },
       });
+      user.hasMany(models.fitur, {
+        as: "fitur",
+        foreignKey: {
+          name: "idUser",
+        },
+      });
     }
   }
   user.init({

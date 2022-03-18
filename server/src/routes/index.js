@@ -28,6 +28,8 @@ const {
  } = require('../controllers/bookmark')
 const { updateUser } = require('../controllers/user')
 
+const { addLike, getLikes } = require('../controllers/fitur')
+
 
 
 router.patch('/user/:id', auth, uploadFile('image'), updateUser)
@@ -46,8 +48,10 @@ router.post('/bookmark', auth,  addBookmark)
 router.get('/bookmarks',  getBookmarks)
 router.get('/my-bookmarks', auth,  getBookmarkUser)
 router.get('/bookmark/:id', auth,  getBookmark)
-router.delete('/my-bookmark/:id', auth,  deleteMybookmark)
+// router.delete('/my-bookmark/:id', auth,  deleteMybookmark)
 router.delete('/bookmark/:id', auth,  deleteBookmark)
 
+router.post('/like', auth, addLike)
+// router.get('/likes', getLikes)
 
 module.exports = router

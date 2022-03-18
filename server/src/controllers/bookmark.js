@@ -11,8 +11,11 @@ exports.addBookmark = async (req, res) => {
       }
       await bookmark.create(data)
       res.send({
-        status: "Success",
+        data:{
+          ...data,
+          status: "Success",
         message: data.status
+        }
       })
     } catch (e) {
       console.log(e);
